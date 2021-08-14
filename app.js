@@ -7,7 +7,7 @@ function clobberer(target, href) {
 
     if (target.length === 1) {
         res = res.concat([
-            `<a id="${target[0]}"${href ? ` href=${href}` : ''}>CLOBBERED</a>`,
+            `<a id="${target[0]}"${href ? ` href="${href}"` : ''}>CLOBBERED</a>`,
             `<img name="${target[0]}" />`
         ]);
     } else if (target.length === 2) {
