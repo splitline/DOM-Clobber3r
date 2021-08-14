@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <title>DOM Clobber3r</title>
+    <style>
+        * {
+            font-family: 'Consolas', monospace !important;
+            line-height: 1.4em;
+        }
+
+        form {
+            margin-bottom: 3em;
+        }
+
+        .notification {
+            white-space: pre;
+        }
+
+        output {
+            line-height: 2.25em;
+            color: #b5b5b5 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">
+                DOM Clobber3r
+            </h1>
+            <p class="subtitle">
+                Generate DOM clobbering attack vector for you.
+            </p>
+            <hr>
+            <form id="form">
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Clobbering target</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control">
+                                <input class="input" type="text" name="targetObject"
+                                    placeholder="// e.g. x.y.z, window.DEV_MODE, document.getElementById ...">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label checkbox">
+                            <input type="checkbox" name="customHrefValue">
+                            &lt;a href="{{value}}"&gt;
+                        </label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control">
+                                <input class="input" type="text" name="hrefValue"
+                                    placeholder="ftp:Clobbered-username:Clobbered-Password@a">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">HTML Result</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control">
+                                <output id="result">(Results goes here)</output>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <hr>
+
+            <div class="content">
+                <h1 class="title is-5">References</h1>
+                <ul>
+                    <li><a href="https://portswigger.net/research/dom-clobbering-strikes-back">DOM Clobbering strikes
+                            back</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
