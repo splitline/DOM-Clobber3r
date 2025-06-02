@@ -1,3 +1,5 @@
+// I use the DOM clobbering tricks to select elements ;)
+
 function escapeHTML(html) {
     return html.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
